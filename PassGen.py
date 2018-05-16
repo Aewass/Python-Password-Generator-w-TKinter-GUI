@@ -29,7 +29,7 @@ labelchoice.pack()
 
 # pass lenght information
 lenlabel = StringVar()
-lenlabel.set("""Please choose the lenght of your password:\n
+lenlabel.set("""Please choose the length of your password:\n
              Minimum amount of characters = 8
              Maximum amount of characters = 24""")
 lentitle = Label(root, textvariable=lenlabel).pack()
