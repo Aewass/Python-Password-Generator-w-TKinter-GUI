@@ -1,24 +1,24 @@
 
 from tkinter import *
-import random
+import random, string
 
 root = Tk()
-root.geometry("450x300")
+root.geometry("400x280")
 root.title("Password Generator")
+root.attributes("-toolwindow", 1)
+root.resizable(width=FALSE, height=FALSE)
+
 
 # intro text
 title = StringVar()
-label = Label(root, textvariable=title, anchor=N).pack()
-title.set("This is a password generator.""\n"" It generates a password based on your choice of password strength.""\n"
-          "Please choose one of the following options:")
+label = Label(root, textvariable=title, anchor=N, pady=10).pack()
+title.set("Password strength:")
 
 # choice part
 
 
 def sel():
-    selection = "You have selected the option " + str(choice.get())+"!"
-    labelchoice.config(text=selection)
-
+    selection = choice.get()
 
 choice = IntVar()
 R1 = Radiobutton(root, text="BASIC", variable=choice, value=1, command=sel).pack(anchor=CENTER)
@@ -29,14 +29,12 @@ labelchoice.pack()
 
 # pass lenght information
 lenlabel = StringVar()
-lenlabel.set("""Please choose the lenght of your password:\n
-             Minimum amount of characters = 8
-             Maximum amount of characters = 24""")
+lenlabel.set("Password length:")
 lentitle = Label(root, textvariable=lenlabel).pack()
 
 # pass lenght number
 val = IntVar()
-spinlenght = Spinbox(root, from_=8, to_=24, textvariable=val).pack()
+spinlenght = Spinbox(root, from_=8, to_=24, textvariable=val, width=13).pack()
 
 # passprint
 
@@ -46,17 +44,17 @@ def callback():
 
 
 # clickable button
-passgenButton = Button(root, text="Generate Password", relief=RIDGE, bd=5, height=2, command=callback)
+passgenButton = Button(root, text="Generate Password", relief=RIDGE, bd=5, height=2, command=callback, pady=3)
 passgenButton.pack()
 password = str(callback)
 
 # password result message
-lsum = Label(root, text="Password: ", anchor=S)
-lsum.pack()
+lsum = Label(root, text="")
+lsum.pack(side=BOTTOM)
 
 # function
-lownum = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPRQRSTUVWXYZ"
-lowupp = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPRQRSTUVWXYZ"
+lownum = string.ascii_uppercase + string.ascii_lowercase + string.digits
+lowupp = string.ascii_uppercase + string.ascii_lowercase
 symbols = """`~!@#$%^&*()_-+={}[]\|:;"'<>,.?/"""
 everything = lowupp + lownum + symbols
 
