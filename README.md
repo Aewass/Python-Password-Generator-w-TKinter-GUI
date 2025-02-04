@@ -1,26 +1,72 @@
-# Python-Password-Generator-w-TKinter-GUI
-Simple password generator with GUI made in TKinter. This is a beginners project and is in no way perfect.
+# Password Generator with Tkinter GUI
 
-#This is a placeholder Readme, as I'm not adept at making proper Readme files as of yet. 
+A modern, user-friendly password generator built with Python and Tkinter. Generate secure passwords with customizable length and complexity.
 
-What does this program do?
-It generates a password on the basis of users choice of security (basic, medium, extra) and lenght.
+## Features
 
-BASIC will generate a password that consists of lowercase and uppercase letters.
-MEDIUM will generate a password that consists of numbers and upper and lowercase letters.
-EXTRA will generate a passsword that consists of uppercase letters, lowercase letters, numbers and basic symbols.
+- **Multiple Security Levels:**
 
-Password lenght is limited to minimum of 8 and maximum of 24 characters. Why? Because it's reasonable (I think).
+  - Basic: Uppercase and lowercase letters
+  - Medium: Letters and numbers
+  - Strong: Letters, numbers, and special characters
 
-You need Python 3.6 to run this code.
-I will probably upload an .exe file in the future, that can run this without Python installed. 
+- **Customizable Length:**
 
-What comes SOON™?
+  - Choose password length from 8 to 32 characters
+  - Smart generation ensures at least one character from each required set
 
-Changes to UI.
-Copy-able password result.
-Better readable fonts.
+- **User-Friendly Interface:**
+  - Clean, modern GUI using ttk widgets
+  - Copy to clipboard functionality
+  - Visual feedback for actions
+  - Cross-platform compatibility (Windows, macOS, Linux)
 
-After that?
+## Installation
 
-I still have a bunch of stuff that could use a GUI. Basic math calculator, BMI calculator, Hangman game, etc. I'll upload them to GitHub in due time!
+1. Ensure Python 3.6+ is installed on your system
+2. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/password-generator.git
+   cd password-generator
+   ```
+3. Create and activate virtual environment:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+4. Install required packages:
+   ```bash
+   pip install pyperclip
+   ```
+
+## Usage
+
+Run the program:
+
+```bash
+python PassGen.py
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Security Features
+
+- Ensures password complexity based on selected strength
+- Guarantees minimum character requirements:
+  - At least one uppercase letter
+  - At least one lowercase letter
+  - At least one number (Medium and Strong)
+  - At least one special character (Strong)
+
+## Requirements
+
+- Python 3.6+
+- tkinter (usually comes with Python)
+- pyperclip
+
+1. Select desired password strength
+2. Choose password length using the spinbox
+3. Click "Generate Password" to create a new password
+4. Use "Copy to Clipboard" to copy the password
